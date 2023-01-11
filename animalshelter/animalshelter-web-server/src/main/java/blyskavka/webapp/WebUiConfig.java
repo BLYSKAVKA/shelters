@@ -4,10 +4,11 @@ import static ua.com.fielden.platform.reflection.TitlesDescsGetter.getEntityTitl
 
 import org.apache.commons.lang3.StringUtils;
 
+import blyskavka.animal.AnimalSpecies;
 import blyskavka.config.Modules;
 import blyskavka.config.personnel.PersonWebUiConfig;
 import blyskavka.personnel.Person;
-
+import blyskavka.webapp.config.animal.AnimalSpeciesWebUiConfig;
 import ua.com.fielden.platform.basic.config.Workflows;
 import ua.com.fielden.platform.utils.Pair;
 import ua.com.fielden.platform.web.app.config.IWebUiBuilder;
@@ -77,6 +78,7 @@ public class WebUiConfig extends AbstractWebUiConfig {
         final PersonWebUiConfig personWebUiConfig = PersonWebUiConfig.register(injector(), builder);
         final UserWebUiConfig userWebUiConfig = UserWebUiConfig.register(injector(), builder);
         final UserRoleWebUiConfig userRoleWebUiConfig = UserRoleWebUiConfig.register(injector(), builder);
+        final AnimalSpeciesWebUiConfig animalSpeciesWebUiConfig = AnimalSpeciesWebUiConfig.register(injector(), builder);
         final SecurityMatrixWebUiConfig securityConfig = SecurityMatrixWebUiConfig.register(injector(), configApp());
 
         // Add user-rated masters and centres to the configuration
@@ -98,6 +100,7 @@ public class WebUiConfig extends AbstractWebUiConfig {
             .captionBgColor(Modules.USERS_AND_PERSONNEL.captionBgColour)
             .menu()
                 .addMenuItem(mkMenuItemTitle(Person.class)).description(mkMenuItemDesc(Person.class)).centre(personWebUiConfig.centre).done()
+                .addMenuItem(mkMenuItemTitle(AnimalSpecies.class)).description(mkMenuItemDesc(AnimalSpecies.class)).centre(animalSpeciesWebUiConfig.centre).done()
                 .addMenuItem("System Users").description("Functionality for managing system users, authorisation, etc.")
                     .addMenuItem("Users").description("User centre").centre(userWebUiConfig.centre).done()
                     .addMenuItem("User Roles").description("User roles centre").centre(userRoleWebUiConfig.centre).done()

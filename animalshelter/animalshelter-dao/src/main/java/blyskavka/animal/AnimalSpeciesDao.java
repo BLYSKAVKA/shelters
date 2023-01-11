@@ -27,6 +27,11 @@ public class AnimalSpeciesDao extends CommonEntityDao<AnimalSpecies> implements 
     public AnimalSpeciesDao(final IFilter filter) {
         super(filter);
     }
+    
+    @Override
+        public AnimalSpecies new_() {
+            return super.new_().setActive(true);
+        }
 
     @Override
     @SessionRequired
