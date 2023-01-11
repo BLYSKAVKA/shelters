@@ -4,7 +4,6 @@ import static java.lang.String.format;
 
 import blyskavka.animal.AnimalSpecies;
 import blyskavka.security.tokens.AnimalsModuleToken;
-import blyskavka.security.tokens.UsersAndPersonnelModuleToken;
 import ua.com.fielden.platform.security.tokens.Template;
 
 /**

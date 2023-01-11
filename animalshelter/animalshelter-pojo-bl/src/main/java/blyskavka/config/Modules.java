@@ -4,13 +4,6 @@ import blyskavka.security.tokens.AnimalsModuleToken;
 import blyskavka.security.tokens.AppAdminModuleToken;
 import blyskavka.security.tokens.UsersAndPersonnelModuleToken;
 import ua.com.fielden.platform.security.ISecurityToken;
-import ua.com.fielden.platform.utils.StreamUtils;
-
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Enumerates application modules and their configurations.
@@ -26,7 +19,7 @@ public enum Modules {
             "mainMenu:tablecodes", "#EFDCD5", "#BCAAA4",
            AppAdminModuleToken.class),
     ANIMALS("Animal records", "A module to manage animal records and all other details that pertain to the shelter's inhabitants.",
-            "mainMenu:equipment", "#EFDCD5", "#BCAAA4",
+            "mainMenu:about", "#EFDCD5", "#BCAAA4",
            AnimalsModuleToken.class);
 
     public final String title;
