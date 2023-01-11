@@ -9,7 +9,7 @@ import ua.com.fielden.platform.security.tokens.Template;
 /**
  * A security token for entity {@link AnimalSpecies} to guard Open.
  *
- * @author Developers
+ * @author Vira (Copied from the existing token.)
  *
  */
 public class AnimalSpeciesMaster_CanOpen_Token extends AnimalsModuleToken {

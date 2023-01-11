@@ -17,7 +17,7 @@ import ua.com.fielden.platform.entity.annotation.EntityType;
 /**
  * DAO implementation for companion object {@link AnimalSpeciesCo}.
  *
- * @author Developers
+ * @author Vira
  *
  */
 @EntityType(AnimalSpecies.class)

@@ -4,9 +4,7 @@ import ua.com.fielden.platform.entity.ActivatableAbstractEntity;
 import ua.com.fielden.platform.entity.DynamicEntityKey;
 import ua.com.fielden.platform.entity.annotation.CompanionObject;
 import ua.com.fielden.platform.entity.annotation.CompositeKeyMember;
-import ua.com.fielden.platform.entity.annotation.DescRequired;
 import ua.com.fielden.platform.entity.annotation.DescTitle;
-import ua.com.fielden.platform.entity.annotation.DisplayDescription;
 import ua.com.fielden.platform.entity.annotation.IsProperty;
 import ua.com.fielden.platform.entity.annotation.KeyTitle;
 import ua.com.fielden.platform.entity.annotation.KeyType;
@@ -18,18 +16,16 @@ import ua.com.fielden.platform.reflection.TitlesDescsGetter;
 import ua.com.fielden.platform.utils.Pair;
 
 /**
- * Master entity object.
+ * Animal Species master entity object.
  *
- * @author Vira Saliieva
- *
+ * @author Vira
+ * 
  */
 @KeyType(DynamicEntityKey.class)
 @KeyTitle("Animal species")
 @CompanionObject(AnimalSpeciesCo.class)
 @MapEntityTo
 @DescTitle("Description of the species.")
-@DisplayDescription
-@DescRequired
 public class AnimalSpecies extends ActivatableAbstractEntity<DynamicEntityKey> {
 
     private static final Pair<String, String> entityTitleAndDesc = TitlesDescsGetter.getEntityTitleAndDesc(AnimalSpecies.class);

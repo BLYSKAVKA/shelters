@@ -10,7 +10,7 @@ import ua.com.fielden.platform.dao.IEntityDao;
 /**
  * Companion object for entity {@link AnimalSpecies}.
  *
- * @author Vira Saliieva
+ * @author Vira
  *
  */
 public interface AnimalSpeciesCo extends IEntityDao<AnimalSpecies> {
