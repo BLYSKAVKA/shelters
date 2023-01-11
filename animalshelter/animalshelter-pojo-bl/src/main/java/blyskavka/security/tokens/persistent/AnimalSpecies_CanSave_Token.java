@@ -3,7 +3,7 @@ package blyskavka.security.tokens.persistent;
 import static java.lang.String.format;
 
 import blyskavka.animal.AnimalSpecies;
-import blyskavka.security.tokens.UsersAndPersonnelModuleToken;
+import blyskavka.security.tokens.AnimalsModuleToken;
 import ua.com.fielden.platform.security.tokens.Template;
 
 /**
@@ -12,7 +12,7 @@ import ua.com.fielden.platform.security.tokens.Template;
  * @author Developers
  *
  */
-public class AnimalSpecies_CanSave_Token extends UsersAndPersonnelModuleToken {
+public class AnimalSpecies_CanSave_Token extends AnimalsModuleToken {
     public final static String TITLE = format(Template.SAVE.forTitle(), AnimalSpecies.ENTITY_TITLE);
     public final static String DESC = format(Template.SAVE.forDesc(), AnimalSpecies.ENTITY_TITLE);
 }
