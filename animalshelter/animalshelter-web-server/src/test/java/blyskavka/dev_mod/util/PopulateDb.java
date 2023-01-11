@@ -1,22 +1,20 @@
 package blyskavka.dev_mod.util;
 
 import static java.lang.String.format;
+import static org.apache.logging.log4j.LogManager.getLogger;
 
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.Properties;
 
+import org.apache.logging.log4j.Logger;
 import org.hibernate.dialect.Dialect;
 import org.hibernate.dialect.H2Dialect;
 import org.hibernate.dialect.PostgreSQL82Dialect;
 
-import static org.apache.logging.log4j.LogManager.getLogger;
-import org.apache.logging.log4j.Logger;
-
 import blyskavka.config.ApplicationDomain;
 import blyskavka.data.IDomainData;
 import blyskavka.utils.PostgresqlDbUtils;
-
 import ua.com.fielden.platform.devdb_support.DomainDrivenDataPopulation;
 import ua.com.fielden.platform.entity.AbstractEntity;
 import ua.com.fielden.platform.persistence.HibernateUtil;
@@ -80,6 +78,11 @@ public class PopulateDb extends DomainDrivenDataPopulation implements IDomainDat
 
         setupUser(User.system_users.SU, "blyskavka");
         setupPerson(User.system_users.SU, "blyskavka");
+//        
+//        save(new_composite(AnimalSpecies.class, "Dog").setDesc("Domesticated mammals that were originally bred from wolves."));
+//        save(new_composite(AnimalSpecies.class, "Cat").setDesc("Rule the world, but you don't know it yet."));
+//        save(new_composite(AnimalSpecies.class, "Squirrel").setDesc("Small rodents with slender bodies, bushy tails and large eyes."));
+//        save(new_composite(AnimalSpecies.class, "Chicken").setDesc("Domesticated junglefowl species that have a squat and rounded appearance."));
 
         LOGGER.info("Completed database creation and population.");
     }
