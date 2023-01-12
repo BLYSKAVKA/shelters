@@ -10,10 +10,10 @@ import ua.com.fielden.platform.svg.combining.IronIconsetUtility;
 public class MenuIconsetCreator {
 
     public static void main(final String[] args) throws IOException {
-        final String srcFolder= "src/main/resources/images_menu";
-        final String iconsetId = "mainMenu";
+        final String srcFolder= "src/main/resources/images_shelter";
+        final String iconsetId = "shelterMenuImages";
         final int svgWidth = 1000;
-        final String outputFile = "src/main/resources/main-menu.js";
+        final String outputFile = "src/main/resources/shelter-main-menu.js";
         final IronIconsetUtility iconsetUtility = new IronIconsetUtility(iconsetId, svgWidth, srcFolder);
         iconsetUtility.createSvgIconset(outputFile);
     }
