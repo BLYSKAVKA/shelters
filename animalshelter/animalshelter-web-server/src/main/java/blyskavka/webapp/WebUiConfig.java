@@ -4,10 +4,11 @@ import static ua.com.fielden.platform.reflection.TitlesDescsGetter.getEntityTitl
 
 import org.apache.commons.lang3.StringUtils;
 
+import blyskavka.animal.AnimalSpecies;
 import blyskavka.config.Modules;
 import blyskavka.config.personnel.PersonWebUiConfig;
 import blyskavka.personnel.Person;
-
+import blyskavka.webapp.config.animal.AnimalSpeciesWebUiConfig;
 import ua.com.fielden.platform.basic.config.Workflows;
 import ua.com.fielden.platform.utils.Pair;
 import ua.com.fielden.platform.web.app.config.IWebUiBuilder;
@@ -77,6 +78,7 @@ public class WebUiConfig extends AbstractWebUiConfig {
         final PersonWebUiConfig personWebUiConfig = PersonWebUiConfig.register(injector(), builder);
         final UserWebUiConfig userWebUiConfig = UserWebUiConfig.register(injector(), builder);
         final UserRoleWebUiConfig userRoleWebUiConfig = UserRoleWebUiConfig.register(injector(), builder);
+        final AnimalSpeciesWebUiConfig animalSpeciesWebUiConfig = AnimalSpeciesWebUiConfig.register(injector(), builder);
         final SecurityMatrixWebUiConfig securityConfig = SecurityMatrixWebUiConfig.register(injector(), configApp());
 
         // Add user-rated masters and centres to the configuration
@@ -104,9 +106,18 @@ public class WebUiConfig extends AbstractWebUiConfig {
                     .addMenuItem("Security Matrix").description("Security Matrix is used to manage application authorisations for User Roles.").master(securityConfig.master).done()
                 .done()
             .done().done()
-        .setLayoutFor(Device.DESKTOP, null, "[[[]]]")
-        .setLayoutFor(Device.TABLET, null, "[[[]]]")
-        .setLayoutFor(Device.MOBILE, null, "[[[]]]")
+        .addModule(Modules.ANIMALS.title)
+            .description(Modules.ANIMALS.desc)
+            .icon(Modules.ANIMALS.icon)
+            .detailIcon(Modules.ANIMALS.icon)
+            .bgColor(Modules.ANIMALS.bgColour)
+            .captionBgColor(Modules.ANIMALS.captionBgColour)
+            .menu()
+                .addMenuItem(mkMenuItemTitle(AnimalSpecies.class)).description(mkMenuItemDesc(AnimalSpecies.class)).centre(animalSpeciesWebUiConfig.centre).done()
+            .done().done()
+        .setLayoutFor(Device.DESKTOP, null, "[[[], []]]")
+        .setLayoutFor(Device.TABLET, null, "[[[], []]]")
+        .setLayoutFor(Device.MOBILE, null, "[[[], []]]")
         .minCellWidth(100).minCellHeight(148).done();
     }
 
