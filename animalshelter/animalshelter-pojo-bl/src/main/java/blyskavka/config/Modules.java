@@ -13,13 +13,13 @@ import ua.com.fielden.platform.security.ISecurityToken;
 public enum Modules {
 
     USERS_AND_PERSONNEL("Users and Personnel", "A module to manage systems users and company personnel.",
-            "mainMenu:help", "#ffeb3b", "#c8b900",
+            "shelterMenuImages:shelter", "#ffeb3b", "#c8b900",
             UsersAndPersonnelModuleToken.class),
     APP_ADMIN("Administration", "A module to manage application administration.",
             "mainMenu:tablecodes", "#EFDCD5", "#BCAAA4",
            AppAdminModuleToken.class),
     ANIMALS("Animal records", "A module to manage animal records and all other details that pertain to the shelter's inhabitants.",
-            "mainMenu:about", "#EFDCD5", "#BCAAA4",
+            "shelterMenuImages:dog", "#EFDCD5", "#BCAAA4",
            AnimalsModuleToken.class);
 
     public final String title;
