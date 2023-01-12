@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>animalshelter-dao</artifactId>
-    <packaging>pom</packaging> <!-- jar was here but raises error -->
+    <packaging>jar</packaging>
 
     <name>animalshelter DAO Module</name>
     <description>A module for providing db-aware implementations for companion objects.</description>
